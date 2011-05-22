@@ -1,0 +1,6 @@
+PIL==1.1.7
+PyYAML==3.09
+distribute==0.6.14
+httplib2==0.6.0
+texturepacker==0.8.3
+wsgiref==0.1.2
