@@ -31,6 +31,18 @@ called Patches that contains fairly generic versions of the new tiles
 added in Minecraft Beta 1.2 onward and recipes to add these to an older
 texture pack to make one that supports the latest Minecraft version.
 
+How could I use this?
+---------------------
+
+Suppose your favourite texture pack is called `foobar.zip`, but was
+designed for Minecraft Beta 1.3. With Texturepacker installed, you could
+use a command like this:
+
+    maketexture --out=foobar+patches.zip base=foobar.zip rx/upgrade-beta-13.tprx
+
+This takes the ZIP file `foobar+patches.zip` that can be used to play
+the current Minecraft release.
+
 
   [1]: http://minecraft.net/
   [2]: http://pdc.github.com/texturepacker/
