@@ -1,5 +1,16 @@
-# What there is to find in the patches pack
+# What there is to find in the patches pack.
 
+beta-16-patch.png:
+  source_rect:
+    width: 32
+    height: 32
+  cell_rect:
+    width: 16
+    height: 16
+  names:
+    - tall_grass
+    - trapdoor
+    - map_item
 beta-15-patch.png:
   source_rect:
     width: 64

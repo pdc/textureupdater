@@ -3,7 +3,7 @@ parameters:
     -
       name: base
       unjumble:
-        href: maps/beta-15
+        href: maps/beta-16
 packs:
   patches:
     #file: patches
@@ -11,7 +11,7 @@ packs:
 label: "{{ base.label }} + Patches"
 desc: "{{ base.desc }}"
 maps:
-  - href: maps/beta-15
+  - href: maps/beta-16
   - href: maps/patches
 mix:
   pack: "$base"
@@ -38,6 +38,12 @@ mix:
       replace:
         -
           pack: $patches
+          source: beta-16-patch.png
+          cells:
+            - tall_grass
+            - trapdoor
+        -
+          pack: $patches
           source: beta-15-patch.png
           cells:
             - spruce_sapling
@@ -48,3 +54,12 @@ mix:
             - detector_rail
             - redstone_a
             - redstone_b
+    -
+      file: gui/items.png
+      if_missing: relax
+      replace:
+        -
+          pack: $patches
+          source: beta-16-patch.png
+          cells:
+            - map_item
