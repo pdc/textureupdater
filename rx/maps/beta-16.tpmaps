@@ -11,13 +11,16 @@
       source_rect:
         x: 112
         y: 32
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       cell_rect:
         width: 16
         height: 16
       names:
         - tall_grass
+        - tall_grass_under
+        - dead_shrub
+        - fern
     -
       # jeb_: The trapdoor block is located to the right of the ladder in the texture
       source_rect:

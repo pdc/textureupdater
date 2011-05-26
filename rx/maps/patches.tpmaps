@@ -2,15 +2,20 @@
 
 beta-16-patch.png:
   source_rect:
-    width: 32
+    width: 64
     height: 32
   cell_rect:
     width: 16
     height: 16
   names:
     - tall_grass
-    - trapdoor
+    - tall_grass_under
+    - dead_shrub
+    - fern
     - map_item
+    - blank_16a
+    - blank_16b
+    - trapdoor
 beta-15-patch.png:
   source_rect:
     width: 64

@@ -6,7 +6,7 @@ parameters:
         href: maps/beta-16
 packs:
   patches:
-    href: http://static.texturejam.org.uk/texturepacks/patches.zip
+    href: http://static.texturejam.org.uk/texturepacks/patches.001.zip
     #file: patches
 label: "{{ base.label }} + Patches"
 desc: "{{ base.desc }}"
@@ -41,6 +41,9 @@ mix:
           source: beta-16-patch.png
           cells:
             - tall_grass
+            - tall_grass_under
+            - dead_shrub
+            - fern
             - trapdoor
         -
           pack: $patches

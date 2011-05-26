@@ -1,0 +1,14 @@
+#!/bin/sh
+
+ver=001
+dir=../texturejam/static/texturepacks
+
+cd $(dirname $0)/..
+maketexture --f -vo $dir/patches.$ver.zip patches.tprx
+
+cd $dir
+git add patches.$ver.zip
+git commit -m 'Update patches texture pack'
+git push
+
+
