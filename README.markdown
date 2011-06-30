@@ -6,7 +6,7 @@ texturepack to the latest Minecraft version.
 
 This package is used by [Texturejam][3].
 
-What, what’s a texture pack?
+Wait, what’s a texture pack?
 ----------------------------
 
 [Minecraft][1] is a game that uses 16×16 textures painted on to cubes to
