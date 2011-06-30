@@ -6,7 +6,7 @@ parameters:
         href: maps/beta-17
 packs:
   patches:
-    href: http://static.texturejam.org.uk/texturepacks/patches.002.zip
+    href: http://static.texturejam.org.uk/texturepacks/patches.003.zip
     #file: patches
 label: "{{ base.label }} + Patches"
 desc: "{{ base.desc }}"
@@ -45,6 +45,12 @@ mix:
             - piston_box_side
             - piston_box_bottom
             - piston_box_top
+            - bed_foot
+            - bed_side_foot
+            - bed_side_head
+            - bed_head
+            - cake_side
+            - cake_slice
         -
           pack: $patches
           source: beta-16-patch.png
@@ -72,10 +78,6 @@ mix:
           cells:
             - bed_top_foot
             - bed_top_head
-            - bed_foot
-            - bed_side_foot
-            - bed_side_head
-            - bed_head
             - repeater
             - repeater_lit
             - redstone_mask
@@ -109,8 +111,6 @@ mix:
             - cake_bottom
             - sandstone_bottom
             - cake_icon
-            - cake_side
-            - cake_slice
             - pine_log
             - birch_log
             - pine_leaves

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ver=002
+ver=003
 dir=../texturejam/static/texturepacks
 
 cd $(dirname $0)/..

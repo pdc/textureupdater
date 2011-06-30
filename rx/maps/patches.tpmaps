@@ -2,7 +2,7 @@
 beta-17-patch.png:
   source_rect:
     width: 96
-    height: 16
+    height: 32
   cell_rect:
     width: 16
     height: 16
@@ -13,6 +13,12 @@ beta-17-patch.png:
     - piston_box_bottom
     - piston_box_top
     - shears_item
+    - bed_foot
+    - bed_side_foot
+    - bed_side_head
+    - bed_head
+    - cake_side
+    - cake_slice
 beta-16-patch.png:
   source_rect:
     width: 64
