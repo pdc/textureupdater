@@ -45,27 +45,6 @@ mix:
             - piston_box_side
             - piston_box_bottom
             - piston_box_top
-        -
-          pack: $patches
-          source: beta-16-patch.png
-          cells:
-            - tall_grass
-            - tall_grass_under
-            - dead_shrub
-            - fern
-            - trapdoor
-        -
-          pack: $patches
-          source: beta-15-patch.png
-          cells:
-            - spruce_sapling
-            - birch_sapling
-            - grass_edge
-            - power_rail
-            - power_rail_lit
-            - detector_rail
-            - redstone_a
-            - redstone_b
     -
       file: gui/items.png
       if_missing: relax
@@ -75,13 +54,3 @@ mix:
           source: beta-17-patch.png
           cells:
             shears: shears_item
-        -
-          pack: $patches
-          source: beta-16-patch.png
-          cells:
-            map: map_item
-        -
-          pack: $patches
-          source: beta-14-patch.png
-          cells:
-            cookie: cookie_item

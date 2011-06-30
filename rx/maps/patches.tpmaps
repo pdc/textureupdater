@@ -1,5 +1,18 @@
 # What there is to find in the patches pack.
-
+beta-17-patch.png:
+  source_rect:
+    width: 96
+    height: 16
+  cell_rect:
+    width: 16
+    height: 16
+  names:
+    - sticky_piston_face
+    - piston_face
+    - piston_box_side
+    - piston_box_bottom
+    - piston_box_top
+    - shears_item
 beta-16-patch.png:
   source_rect:
     width: 64

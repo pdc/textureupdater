@@ -3,15 +3,15 @@ parameters:
     -
       name: base
       unjumble:
-        href: maps/beta-16
+        href: maps/beta-17
 packs:
   patches:
     #file: patches
-    href: http://static.texturejam.org.uk/texturepacks/patches.001.zip
+    href: http://static.texturejam.org.uk/texturepacks/patches.002.zip
 label: "{{ base.label }} + Patches"
 desc: "{{ base.desc }}"
 maps:
-  - href: maps/beta-16
+  - href: maps/beta-17
   - href: maps/patches
 mix:
   pack: "$base"
@@ -36,6 +36,15 @@ mix:
     -
       file: terrain.png
       replace:
+        -
+          pack: $patches
+          source: beta-17-patch.png
+          cells:
+            - sticky_piston_face
+            - piston_face
+            - piston_box_side
+            - piston_box_bottom
+            - piston_box_top
         -
           pack: $patches
           source: beta-16-patch.png
@@ -63,6 +72,11 @@ mix:
       replace:
         -
           pack: $patches
+          source: beta-17-patch.png
+          cells:
+            shears: shears_item
+        -
+          pack: $patches
           source: beta-16-patch.png
           cells:
-            - map_item
+            map: map_item
