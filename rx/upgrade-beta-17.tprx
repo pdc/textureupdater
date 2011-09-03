@@ -19,17 +19,6 @@ mix:
                 stalk, stalk_corner, stone_brick, vines]
             pack: $patches
             source: beta-18-patch.png
-        -   cells: [bed_foot, bed_head, bed_side_foot, bed_side_head, cake_side, cake_slice,
-                piston_box_bottom, piston_box_side, piston_box_top, piston_face, sticky_piston_face]
-            pack: $patches
-            source: beta-17-patch.png
-        -   cells: [dead_shrub, fern, tall_grass, tall_grass_under, trapdoor]
-            pack: $patches
-            source: beta-16-patch.png
-        -   cells: [birch_sapling, detector_rail, grass_edge, power_rail, power_rail_lit,
-                redstone_a, redstone_b, spruce_sapling]
-            pack: $patches
-            source: beta-15-patch.png
     -   file: gui/items.png
         if_missing: relax
         replace:
@@ -40,12 +29,6 @@ mix:
                 raw_porkchop: raw_porkchop_item, rotten_flesh: rotten_flesh_item}
             pack: $patches
             source: beta-18-patch.png
-        -   cells: {shears: shears_item}
-            pack: $patches
-            source: beta-17-patch.png
-        -   cells: {map: map_item}
-            pack: $patches
-            source: beta-16-patch.png
     pack: $base
 packs:
     patches: {file: ../patches}

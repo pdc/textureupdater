@@ -1,0 +1,116 @@
+#! /usr/bin/env python
+
+import sys
+import os
+import yaml
+from StringIO import StringIO
+
+recipe_template = """parameters:
+  packs:
+    -
+      name: base
+      unjumble:
+        href: maps/beta-17
+packs:
+  patches:
+    file: patches
+label: "{{ base.label }} + Patches"
+desc: "{{ base.desc }}"
+maps:
+  - href: maps/beta-17
+  - href: maps/patches
+mix:
+  pack: "$base"
+  files:
+    -
+      # Default pack icon. Will be overridden if source has pack.png
+      file: pack.png
+      source: terrain.png
+      pack_icon:
+        cells:
+          - dirt_grass
+          - stone
+          - planks
+          - sand
+          - log_top
+          - cactus_top
+          - coal_ore
+          - wooden_door_top
+          - wooden_door_bottom
+          - redstone_torch_lit
+    - "*.png"
+    -
+      file: terrain.png
+      replace: []
+    -
+      file: gui/items.png
+      if_missing: relax
+      replace: []
+"""
+
+class RecipeMaker(object):
+    def __init__(self, patches_tpmaps_file, patches_version='003'):
+        with open(patches_tpmaps_file, 'rb') as strm:
+            self.patches = yaml.load(strm)
+        self.versions = set('-'.join(x.split('-')[:2]) for x in self.patches.keys())
+        self.minecraft_version = max(self.versions)
+        print >>sys.stderr, 'Upgrading to %s' % self.minecraft_version
+
+    def make_recipe(self, is_local=False, from_version=None, out_file_path=None):
+        """Generate a recipe using the patches atlas as a guide."""
+        if from_version is None:
+            from_version = 'beta-11'
+
+        # Create a recipe that does nothing.
+        recipe = yaml.load(StringIO(recipe_template))
+        recipe['parameters']['packs'][0]['unjumble']['href'] = 'maps/%s' % self.minecraft_version
+        if is_local:
+            recipe['packs']['patches'] = {'file': '../patches'}
+        else:
+            recipe['packs']['patches'] = {'href': 'http://static.texturejam.org.uk/texturepacks/self.patches.%s.zip' % self.patches_version}
+        recipe['maps'][0]['href'] = 'maps/%s' % self.minecraft_version
+
+        # Now add replacement terms based on the maps
+        accum = set('_')
+        for file_name, map in sorted(self.patches.items(), reverse=True):
+            if file_name < from_version or file_name.startswith(from_version):
+                continue
+
+            names = (set(map['names'])
+                if hasattr(map, 'items')
+                else set(x for map1 in map for x in map1['names']))
+            names -= accum
+            accum |= names # Suppress repeats
+
+            items_names = set(x for x in names if x.endswith('_item'))
+            terrain_names = names - items_names
+            if terrain_names:
+                replacement = {
+                    'pack': '$patches',
+                    'source': file_name,
+                    'cells': sorted(terrain_names),
+                }
+                recipe['mix']['files'][-2]['replace'].append(replacement)
+            if items_names:
+                replacement = {
+                    'pack': '$patches',
+                    'source': file_name,
+                    'cells': dict((x[:-5], x) for x in sorted(items_names)),
+                }
+                recipe['mix']['files'][-1]['replace'].append(replacement)
+
+        if out_file_path:
+            with open(out_file_path, 'wb') as strm:
+                yaml.dump(recipe, strm, indent=4)
+            print >>sys.stderr, 'Wrote YAML to', out_file_path
+        else:
+            yaml.dump(recipe, sys.stdout, indent=4)
+
+if __name__ == '__main__':
+    dir_path = os.path.join(os.path.dirname(__file__), '../rx')
+    tpmaps_file = os.path.join(dir_path, 'maps/patches.tpmaps')
+    maker = RecipeMaker(tpmaps_file)
+    for version in ['beta-11'] + sorted(maker.versions)[:-1]:
+        print >>sys.stderr, version, '...',
+        file_name = 'upgrade-%s.tprx' % version
+        maker.make_recipe(from_version=version, is_local=True, out_file_path=os.path.join(dir_path, file_name))

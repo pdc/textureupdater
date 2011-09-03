@@ -1,4 +1,49 @@
 # What there is to find in the patches pack.
+beta-18-patch.png:
+  source_rect:
+    width: 128
+    height: 80
+  cell_rect:
+    width: 16
+    height: 16
+  names:
+    - stone_brick
+    - mossy_stone_brick
+    - cracked_stone_brick
+    - iron_bars
+    - glass_pane_top
+    - stalk
+    - stalk_corner
+    - vines
+    - red_mushroom_top
+    - brown_mushroom_top
+    - mushroom_stalk_side
+    - mushroom_stalk_top
+    - footsteps
+    - border
+    - border_corner
+    - sparkle
+    - melon_side
+    - melon_top
+    - _
+    - _
+    - _
+    - _
+    - _
+    - _
+    - bow_pull_item
+    - bow_pull_more_item
+    - bow_pull_most_item
+    - melon_item
+    - raw_porkchop_item
+    - cooked_porkchop_item
+    - raw_beef_item
+    - cooked_beef_item
+    - raw_chicken_item
+    - cooked_chicken_item
+    - melon_seeds_item
+    - pumpkin_seeds_item
+    - rotten_flesh_item
 beta-17-patch.png:
   source_rect:
     width: 96
@@ -32,8 +77,8 @@ beta-16-patch.png:
     - dead_shrub
     - fern
     - map_item
-    - blank_16a
-    - blank_16b
+    - _
+    - _
     - trapdoor
 beta-15-patch.png:
   source_rect:
@@ -71,7 +116,7 @@ beta-13-patch.png:
     - oozing_obsidian
     - bed_top_foot
     - bed_top_head
-    - patch-14-30
+    - _
     - repeater
     - redstone_mask
     - repeater_item
@@ -106,7 +151,7 @@ beta-12-patch.png:
       - cyan_wool
       - orange_wool
       - light_gray_wool
-      - "71"
+      - _
       - lapis_lazuli
       - dispenser
       - lapis_lazuli_ore
@@ -151,4 +196,4 @@ beta-12-patch.png:
       - sugar_item
       - cake_item
       - bone_item
-      - "93"
+      - _

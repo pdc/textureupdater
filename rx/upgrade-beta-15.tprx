@@ -1,88 +1,51 @@
-parameters:
-  packs:
-    -
-      name: base
-      unjumble:
-        href: maps/beta-17
-packs:
-  patches:
-    #file: patches
-    href: http://static.texturejam.org.uk/texturepacks/patches.003.zip
-label: "{{ base.label }} + Patches"
-desc: "{{ base.desc }}"
+desc: '{{ base.desc }}'
+label: '{{ base.label }} + Patches'
 maps:
-  - href: maps/beta-17
-  - href: maps/patches
+- {href: maps/beta-18}
+- {href: maps/patches}
 mix:
-  pack: "$base"
-  files:
-    -
-      # Default pack icon. Will be overridden if source has pack.png
-      file: pack.png
-      source: terrain.png
-      pack_icon:
-        cells:
-          - dirt_grass
-          - stone
-          - planks
-          - sand
-          - log_top
-          - cactus_top
-          - coal_ore
-          - wooden_door_top
-          - wooden_door_bottom
-          - redstone_torch_lit
-    - "*.png"
-    -
-      file: terrain.png
-      replace:
-        -
-          pack: $patches
-          source: beta-17-patch.png
-          cells:
-            - sticky_piston_face
-            - piston_face
-            - piston_box_side
-            - piston_box_bottom
-            - piston_box_top
-            - bed_foot
-            - bed_side_foot
-            - bed_side_head
-            - bed_head
-            - cake_side
-            - cake_slice
-        -
-          pack: $patches
-          source: beta-16-patch.png
-          cells:
-            - tall_grass
-            - tall_grass_under
-            - dead_shrub
-            - fern
-            - trapdoor
-        -
-          pack: $patches
-          source: beta-13-patch.png
-          cells:
-            - bed_top_foot
-            - bed_top_head
-        -
-          pack: $patches
-          source: beta-12-patch.png
-          cells:
-            - cake_top
-            - cake_bottom
-    -
-      file: gui/items.png
-      if_missing: relax
-      replace:
-        -
-          pack: $patches
-          source: beta-17-patch.png
-          cells:
-            shears: shears_item
-        -
-          pack: $patches
-          source: beta-16-patch.png
-          cells:
-            map: map_item
+    files:
+    -   file: pack.png
+        pack_icon:
+            cells: [dirt_grass, stone, planks, sand, log_top, cactus_top, coal_ore,
+                wooden_door_top, wooden_door_bottom, redstone_torch_lit]
+        source: terrain.png
+    - '*.png'
+    -   file: terrain.png
+        replace:
+        -   cells: [border, border_corner, brown_mushroom_top, cracked_stone_brick,
+                footsteps, glass_pane_top, iron_bars, melon_side, melon_top, mossy_stone_brick,
+                mushroom_stalk_side, mushroom_stalk_top, red_mushroom_top, sparkle,
+                stalk, stalk_corner, stone_brick, vines]
+            pack: $patches
+            source: beta-18-patch.png
+        -   cells: [bed_foot, bed_head, bed_side_foot, bed_side_head, cake_side, cake_slice,
+                piston_box_bottom, piston_box_side, piston_box_top, piston_face, sticky_piston_face]
+            pack: $patches
+            source: beta-17-patch.png
+        -   cells: [dead_shrub, fern, tall_grass, tall_grass_under, trapdoor]
+            pack: $patches
+            source: beta-16-patch.png
+    -   file: gui/items.png
+        if_missing: relax
+        replace:
+        -   cells: {bow_pull: bow_pull_item, bow_pull_more: bow_pull_more_item, bow_pull_most: bow_pull_most_item,
+                cooked_beef: cooked_beef_item, cooked_chicken: cooked_chicken_item,
+                cooked_porkchop: cooked_porkchop_item, melon: melon_item, melon_seeds: melon_seeds_item,
+                pumpkin_seeds: pumpkin_seeds_item, raw_beef: raw_beef_item, raw_chicken: raw_chicken_item,
+                raw_porkchop: raw_porkchop_item, rotten_flesh: rotten_flesh_item}
+            pack: $patches
+            source: beta-18-patch.png
+        -   cells: {shears: shears_item}
+            pack: $patches
+            source: beta-17-patch.png
+        -   cells: {map: map_item}
+            pack: $patches
+            source: beta-16-patch.png
+    pack: $base
+packs:
+    patches: {file: ../patches}
+parameters:
+    packs:
+    -   name: base
+        unjumble: {href: maps/beta-18}
