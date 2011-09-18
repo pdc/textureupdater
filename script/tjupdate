@@ -1,10 +1,14 @@
 #!/bin/sh
 
-ver=003
-dir=../texturejam/static/texturepacks
+# Build the patches pack and upload to Tetxurejam.
+# Assumes this project's directory is a sibling to the texturejam one.
 
 cd $(dirname $0)/..
-maketexture --f -vo $dir/patches.$ver.zip patches.tprx
+
+ver=$(cat VERSION)
+dir=../texturejam/static/texturepacks
+
+maketexture --force -v --out=$dir/patches.$ver.zip patches.tprx
 
 cd $dir
 git add patches.$ver.zip

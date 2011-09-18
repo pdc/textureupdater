@@ -1,9 +1,17 @@
 #! /usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+"""Build the .tprx files for the new verison of Minecraft.
+
+Uses information from the map files of the patches pack
+to work out which cells get replaced.
+"""
 
 import sys
 import os
 import yaml
 from StringIO import StringIO
+import argparse
 
 recipe_template = """parameters:
   packs:
@@ -49,7 +57,8 @@ mix:
 """
 
 class RecipeMaker(object):
-    def __init__(self, patches_tpmaps_file, patches_version='003'):
+    def __init__(self, patches_tpmaps_file, patches_version):
+        self.patches_version = patches_version
         with open(patches_tpmaps_file, 'rb') as strm:
             self.patches = yaml.load(strm)
         self.versions = set('-'.join(x.split('-')[:2]) for x in self.patches.keys())
@@ -105,12 +114,30 @@ class RecipeMaker(object):
             print >>sys.stderr, 'Wrote YAML to', out_file_path
         else:
             yaml.dump(recipe, sys.stdout, indent=4)
-
-if __name__ == '__main__':
-    dir_path = os.path.join(os.path.dirname(__file__), '../rx')
-    tpmaps_file = os.path.join(dir_path, 'maps/patches.tpmaps')
-    maker = RecipeMaker(tpmaps_file)
+            
+def main(argv=None):
+    project_dir = os.path.join(os.path.dirname(__file__), '..')
+    with open(os.path.join(project_dir, 'VERSION'), 'rt') as strm:
+        patches_version =  strm.read().strip()
+        
+    recipes_dir = os.path.join(project_dir, 'rx')
+    
+    parser = argparse.ArgumentParser(description='Build the recipe (.tprx) files for updating to lates Minecraft version')
+    parser.add_argument('-l', '--local', action='store_true', dest='is_local', 
+                help='Use local patches pack, not the one installed on texturejam.org.uk')
+    parser.add_argument('-o', '--output',
+                default=recipes_dir, metavar='DIR', dest='output_dir',
+                help='Save the recipe files in this directory. Default is %s' % recipes_dir)
+    options = parser.parse_args()
+    
+    tpmaps_file = os.path.join(recipes_dir, 'maps/patches.tpmaps')
+    maker = RecipeMaker(tpmaps_file, patches_version)
     for version in ['beta-11'] + sorted(maker.versions)[:-1]:
         print >>sys.stderr, version, '...',
         file_name = 'upgrade-%s.tprx' % version
-        maker.make_recipe(from_version=version, is_local=True, out_file_path=os.path.join(dir_path, file_name))
+        maker.make_recipe(from_version=version, 
+            is_local=options.is_local, 
+            out_file_path=os.path.join(options.output_dir, file_name))
+
+if __name__ == '__main__':
+    sys.exit(main())
