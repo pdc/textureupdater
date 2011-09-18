@@ -30,8 +30,8 @@ mix:
                 redstone_a, redstone_b, spruce_sapling]
             pack: $patches
             source: beta-15-patch.png
-        -   cells: [bed_top_foot, bed_top_head, oozing_obsidian, redstone_line_mask,
-                redstone_mask, repeater, repeater_lit]
+        -   cells: [bed_top_foot, bed_top_head, redstone_line_mask, redstone_mask,
+                repeater, repeater_lit]
             pack: $patches
             source: beta-13-patch.png
     -   file: gui/items.png
