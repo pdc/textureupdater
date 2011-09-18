@@ -10,7 +10,63 @@ mix:
             cells: [dirt_grass, stone, planks, sand, log_top, cactus_top, coal_ore,
                 wooden_door_top, wooden_door_bottom, redstone_torch_lit]
         source: terrain.png
-    - '*.png'
+    - {file: armor/chain_1.png, if_missing: relax}
+    - {file: armor/chain_2.png, if_missing: relax}
+    - {file: armor/cloth_1.png, if_missing: relax}
+    - {file: armor/cloth_2.png, if_missing: relax}
+    - {file: armor/diamond_1.png, if_missing: relax}
+    - {file: armor/diamond_2.png, if_missing: relax}
+    - {file: armor/gold_1.png, if_missing: relax}
+    - {file: armor/gold_2.png, if_missing: relax}
+    - {file: armor/iron_1.png, if_missing: relax}
+    - {file: armor/iron_2.png, if_missing: relax}
+    - {file: art/kz.png, if_missing: relax}
+    - {file: font/default.png, if_missing: relax}
+    - {file: gui/background.png, if_missing: relax}
+    - {file: gui/container.png, if_missing: relax}
+    - {file: gui/crafting.png, if_missing: relax}
+    - {file: gui/furnace.png, if_missing: relax}
+    - {file: gui/gui.png, if_missing: relax}
+    - {file: gui/inventory.png, if_missing: relax}
+    - {file: gui/logo.png, if_missing: relax}
+    - {file: gui/trap.png, if_missing: relax}
+    - {file: gui/unknown_pack.png, if_missing: relax}
+    - {file: item/arrows.png, if_missing: relax}
+    - {file: item/boat.png, if_missing: relax}
+    - {file: item/cart.png, if_missing: relax}
+    - {file: item/door.png, if_missing: relax}
+    - {file: item/sign.png, if_missing: relax}
+    - {file: misc/dial.png, if_missing: relax}
+    - {file: misc/foliagecolor.png, if_missing: relax}
+    - {file: misc/grasscolor.png, if_missing: relax}
+    - {file: misc/pumpkinblur.png, if_missing: relax}
+    - {file: misc/shadow.png, if_missing: relax}
+    - {file: misc/vignette.png, if_missing: relax}
+    - {file: misc/water.png, if_missing: relax}
+    - {file: mob/char.png, if_missing: relax}
+    - {file: mob/chicken.png, if_missing: relax}
+    - {file: mob/cow.png, if_missing: relax}
+    - {file: mob/creeper.png, if_missing: relax}
+    - {file: mob/ghast.png, if_missing: relax}
+    - {file: mob/ghast_fire.png, if_missing: relax}
+    - {file: mob/pig.png, if_missing: relax}
+    - {file: mob/pigman.png, if_missing: relax}
+    - {file: mob/pigzombie.png, if_missing: relax}
+    - {file: mob/saddle.png, if_missing: relax}
+    - {file: mob/sheep.png, if_missing: relax}
+    - {file: mob/sheep_fur.png, if_missing: relax}
+    - {file: mob/skeleton.png, if_missing: relax}
+    - {file: mob/slime.png, if_missing: relax}
+    - {file: mob/spider.png, if_missing: relax}
+    - {file: mob/spider_eyes.png, if_missing: relax}
+    - {file: mob/squid.png, if_missing: relax}
+    - {file: mob/zombie.png, if_missing: relax}
+    - {file: pack.png, if_missing: relax}
+    - {file: particles.png, if_missing: relax}
+    - {file: terrain/moon.png, if_missing: relax}
+    - {file: terrain/sun.png, if_missing: relax}
+    - {file: title/black.png, if_missing: relax}
+    - {file: title/mojang.png, if_missing: relax}
     -   file: terrain.png
         replace:
         -   cells: [border, border_corner, brown_mushroom_top, cracked_stone_brick,

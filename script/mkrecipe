@@ -59,6 +59,7 @@ mix:
 class RecipeMaker(object):
     def __init__(self, patches_tpmaps_file, patches_version):
         self.patches_version = patches_version
+        self.tpmaps_dir = os.path.dirname(patches_tpmaps_file)
         with open(patches_tpmaps_file, 'rb') as strm:
             self.patches = yaml.load(strm)
         self.versions = set('-'.join(x.split('-')[:2]) for x in self.patches.keys())
@@ -107,6 +108,22 @@ class RecipeMaker(object):
                     'cells': dict((x[:-5], x) for x in sorted(items_names)),
                 }
                 recipe['mix']['files'][-1]['replace'].append(replacement)
+
+        files_to_skip = set()
+        if from_version < 'beta-18':
+            # With Beta 1.8 the SIZE of the image for gui/icons.png changed.
+            # We can’t patch this file, so must strip it out
+            files_to_skip.add('gui/icons.png')
+        if files_to_skip:
+            # Replace the '*.png' with an explicit list of files.
+            # This way we can omit the files we do not want to copy.
+            atlas_file = os.path.join(self.tpmaps_dir, 'beta-12.tpmaps')
+            with open(atlas_file, 'rb') as strm:
+                atlas = yaml.load(strm)
+            files = set(atlas.keys())
+            files -= files_to_skip
+            files -= set(['terrain.png', 'gui/items.png']) # we supply definitions for these
+            recipe['mix']['files'][1:2] = [{'file': x, 'if_missing': 'relax'} for x in sorted(files)]
 
         if out_file_path:
             with open(out_file_path, 'wb') as strm:
