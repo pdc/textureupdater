@@ -76,7 +76,7 @@ class RecipeMaker(object):
         if is_local:
             recipe['packs']['patches'] = {'file': '../patches'}
         else:
-            recipe['packs']['patches'] = {'href': 'http://static.texturejam.org.uk/texturepacks/self.patches.%s.zip' % self.patches_version}
+            recipe['packs']['patches'] = {'href': 'http://static.texturejam.org.uk/texturepacks/patches.%s.zip' % self.patches_version}
         recipe['maps'][0]['href'] = 'maps/%s' % self.minecraft_version
 
         # Now add replacement terms based on the maps

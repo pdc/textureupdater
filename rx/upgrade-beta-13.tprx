@@ -51,7 +51,7 @@ mix:
             source: beta-14-patch.png
     pack: $base
 packs:
-    patches: {href: 'http://static.texturejam.org.uk/texturepacks/self.patches.004.zip'}
+    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.004.zip'}
 parameters:
     packs:
     -   name: base
