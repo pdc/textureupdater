@@ -87,9 +87,10 @@ mix:
         replace:
         -   cells: {bow_pull: bow_pull_item, bow_pull_more: bow_pull_more_item, bow_pull_most: bow_pull_most_item,
                 cooked_beef: cooked_beef_item, cooked_chicken: cooked_chicken_item,
-                cooked_porkchop: cooked_porkchop_item, melon: melon_item, melon_seeds: melon_seeds_item,
-                pumpkin_seeds: pumpkin_seeds_item, raw_beef: raw_beef_item, raw_chicken: raw_chicken_item,
-                raw_porkchop: raw_porkchop_item, rotten_flesh: rotten_flesh_item}
+                cooked_porkchop: cooked_porkchop_item, ender_pearl: ender_pearl_item,
+                melon: melon_item, melon_seeds: melon_seeds_item, pumpkin_seeds: pumpkin_seeds_item,
+                raw_beef: raw_beef_item, raw_chicken: raw_chicken_item, raw_porkchop: raw_porkchop_item,
+                rotten_flesh: rotten_flesh_item}
             pack: $patches
             source: beta-18-patch.png
         -   cells: {shears: shears_item}
@@ -100,7 +101,7 @@ mix:
             source: beta-16-patch.png
     pack: $base
 packs:
-    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.004.zip'}
+    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.006.zip'}
 parameters:
     packs:
     -   name: base

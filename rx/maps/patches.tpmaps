@@ -44,6 +44,7 @@ beta-18-patch.png:
     - melon_seeds_item
     - pumpkin_seeds_item
     - rotten_flesh_item
+    - ender_pearl_item
 beta-17-patch.png:
   source_rect:
     width: 96
