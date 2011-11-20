@@ -1,6 +1,69 @@
 label: Patches
 desc: Contains graphics for upgrading packs
+maps:
+    - rx/maps/patches
+    - rx/maps/release-10
 mix:
   pack: patches
   files:
     - "*.png"
+    - file: release-10-patch.png
+      source:
+        background: transparent
+        height: 96
+        width: 128
+      replace:
+      - cells:
+          black_and_red_sphere_item: black_and_red_sphere
+          blaze_dust_item: blaze_dust
+          blaze_rod_item: blaze_rod
+          brewing_stand_item: brewing_stand
+          cauldron_item: cauldron
+          eye_of_ender_item: eye_of_ender
+          fermented_spider_eye_item: fermented_spider_eye
+          ghast_tear_item: ghast_tear
+          glass_bottle_item: glass_bottle
+          glistering_melon_item: glistering_melon
+          gold_nugget_item: gold_nugget
+          magma_cream_item: magma_cream
+          music_disc_11_item: music_disc_11
+          music_disc_blocks_item: music_disc_blocks
+          music_disc_chirp_item: music_disc_chirp
+          music_disc_far_item: music_disc_far
+          music_disc_mall_item: music_disc_mall
+          music_disc_mellohi_item: music_disc_mellohi
+          music_disc_stal_item: music_disc_stal
+          music_disc_strad_item: music_disc_strad
+          music_disc_ward_item: music_disc_ward
+          nether_wart_item: nether_wart
+          spider_eye_item: spider_eye
+          splash_bottle_item: splash_bottle
+          squiggle_item: squiggle
+        pack:
+          href: minecraft:bin/minecraft.jar
+        source: gui/items.png
+      - cells:
+        - lily_pad
+        - mycel_side
+        - mycel_top
+        - cauldron_top
+        - couldron_inside
+        - cauldron_side
+        - cauldron_bottom
+        - brewing_stand_base
+        - brewing_stand
+        - end_portal_frame_top
+        - end_portal_frame_side
+        - end_portal_eye_of_ender
+        - end_portal_frame_bottom
+        - enchantment_table_top
+        - enchantment_table_inside
+        - enchantment_table_side
+        - enchantment_table_bottom
+        - netherbrick
+        - nether_wart_small
+        - nether_wart_medium
+        - nether_wart_large
+        pack:
+          href: minecraft:bin/minecraft.jar
+        source: terrain.png

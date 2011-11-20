@@ -1,7 +1,7 @@
 desc: '{{ base.desc }}'
 label: '{{ base.label }} + Patches'
 maps:
-- {href: maps/beta-18}
+- {href: maps/release-10}
 - {href: maps/patches}
 mix:
     files:
@@ -69,6 +69,14 @@ mix:
     - {file: title/mojang.png, if_missing: relax}
     -   file: terrain.png
         replace:
+        -   cells: [brewing_stand, brewing_stand_base, cauldron_bottom, cauldron_side,
+                cauldron_top, couldron_inside, enchantment_table_bottom, enchantment_table_inside,
+                enchantment_table_side, enchantment_table_top, end_portal_eye_of_ender,
+                end_portal_frame_bottom, end_portal_frame_side, end_portal_frame_top,
+                lily_pad, mycel_side, mycel_top, nether_wart_large, nether_wart_medium,
+                nether_wart_small, netherbrick]
+            pack: $patches
+            source: release-10-patch.png
         -   cells: [border, border_corner, brown_mushroom_top, cracked_stone_brick,
                 footsteps, glass_pane_top, iron_bars, melon_side, melon_top, mossy_stone_brick,
                 mushroom_stalk_side, mushroom_stalk_top, red_mushroom_top, sparkle,
@@ -101,6 +109,19 @@ mix:
     -   file: gui/items.png
         if_missing: relax
         replace:
+        -   cells: {black_and_red_sphere: black_and_red_sphere_item, blaze_dust: blaze_dust_item,
+                blaze_rod: blaze_rod_item, brewing_stand: brewing_stand_item, cauldron: cauldron_item,
+                eye_of_ender: eye_of_ender_item, fermented_spider_eye: fermented_spider_eye_item,
+                ghast_tear: ghast_tear_item, glass_bottle: glass_bottle_item, glistering_melon: glistering_melon_item,
+                gold_nugget: gold_nugget_item, magma_cream: magma_cream_item, music_disc_11: music_disc_11_item,
+                music_disc_blocks: music_disc_blocks_item, music_disc_chirp: music_disc_chirp_item,
+                music_disc_far: music_disc_far_item, music_disc_mall: music_disc_mall_item,
+                music_disc_mellohi: music_disc_mellohi_item, music_disc_stal: music_disc_stal_item,
+                music_disc_strad: music_disc_strad_item, music_disc_ward: music_disc_ward_item,
+                nether_wart: nether_wart_item, spider_eye: spider_eye_item, splash_bottle: splash_bottle_item,
+                squiggle: squiggle_item}
+            pack: $patches
+            source: release-10-patch.png
         -   cells: {bow_pull: bow_pull_item, bow_pull_more: bow_pull_more_item, bow_pull_most: bow_pull_most_item,
                 cooked_beef: cooked_beef_item, cooked_chicken: cooked_chicken_item,
                 cooked_porkchop: cooked_porkchop_item, ender_pearl: ender_pearl_item,
@@ -136,4 +157,4 @@ packs:
 parameters:
     packs:
     -   name: base
-        unjumble: {href: maps/beta-18}
+        unjumble: {href: maps/release-10}

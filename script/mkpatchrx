@@ -1,0 +1,86 @@
+#! /usr/bin/env python
+# -*-coding: UTF-8 -*-
+
+"""Generate a patch pack based on a map delta.
+
+This depends on the organization of  my atlas of the Minecraft
+texture packs as a series of deltas based on Minecraft Beta 1.1.
+"""
+
+import sys
+import os
+from os import path
+
+import yaml
+
+
+project_dir = path.dirname(path.dirname(__file__))
+atlas_dir = path.join(project_dir, 'rx/maps')
+file_name = os.path.join(atlas_dir, 'release-10.tpmaps')
+with open(file_name, 'rb') as strm:
+    src_atlas = yaml.load(strm)
+
+file_cells = sorted((fn, [n for x in mp[1:] for n in x['names'] if n != '_']) for (fn, mp) in src_atlas[1].items())
+
+
+def munged_name(file_name, cell_name):
+    if file_name == 'terrain.png':
+        return cell_name
+    affix = file_name[:-4]
+    p = affix.rfind('/')
+    if p > 0:
+        affix = affix[p + 1:]
+    if affix.endswith('s'):
+        affix = affix[:-1]
+    return '{1}_{0}'.format(affix, cell_name)
+
+cells = [n for (fn, ns) in file_cells for n in ns]
+munged_cells = [munged_name(fn, n) for (fn, ns) in file_cells for n in ns]
+
+n = int(len(cells) ** 0.5)
+m = (len(cells) + n - 1) // n
+print len(cells), m, 'x', n, '=', n * m
+
+tpmap = {
+    'release-10-patch.png': {
+        'source_rect': {
+            'width': 16 * m,
+            'height': 16 * n,
+        },
+        'cell_rect': {
+            'width': 16,
+            'height': 16,
+        },
+        'names': munged_cells,
+    },
+}
+
+print '# This goes in patches.tpmaps:'
+print '# --- cut here ---'
+yaml.dump(tpmap, sys.stdout, default_flow_style=False)
+print '# --- cut here ---'
+print
+
+partial_rx = {'mix': [u'…', {
+        'file': 'release-10-patch.png',
+        'source': {
+            'background': 'transparent',
+            'width': 16 * m,
+            'height': 16 * n,
+        },
+        'replace':  [{
+               'source':  fn,
+                'pack': {
+                    'href': 'minecraft:bin/minecraft.jar'
+                },
+                'cells': (ns if fn == 'terrain.png' else dict((munged_name(fn, n), n) for n in ns)),
+            }
+            for (fn, ns) in file_cells
+        ]
+    }]}
+
+print '# This goes in patches.tprx:'
+print '# --- cut here ---'
+yaml.dump(partial_rx, sys.stdout, default_flow_style=False)
+print '# --- cut here ---'
+print
