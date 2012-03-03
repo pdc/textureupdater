@@ -14,9 +14,11 @@ from os import path
 import yaml
 
 
+new_patch_name = 'release-12'
+
 project_dir = path.dirname(path.dirname(__file__))
 atlas_dir = path.join(project_dir, 'rx/maps')
-file_name = os.path.join(atlas_dir, 'release-10.tpmaps')
+file_name = os.path.join(atlas_dir, '{0}.tpmaps'.format(new_patch_name))
 with open(file_name, 'rb') as strm:
     src_atlas = yaml.load(strm)
 
@@ -42,7 +44,7 @@ m = (len(cells) + n - 1) // n
 print len(cells), m, 'x', n, '=', n * m
 
 tpmap = {
-    'release-10-patch.png': {
+    '{0}-patch.png'.format(new_patch_name): {
         'source_rect': {
             'width': 16 * m,
             'height': 16 * n,
@@ -62,7 +64,7 @@ print '# --- cut here ---'
 print
 
 partial_rx = {'mix': [u'…', {
-        'file': 'release-10-patch.png',
+        'file': '{0}-patch.png'.format(new_patch_name),
         'source': {
             'background': 'transparent',
             'width': 16 * m,

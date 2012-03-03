@@ -1,4 +1,25 @@
 # What there is to find in the patches pack.
+release-12-patch.png:
+  source_rect:
+    height: 48
+    width: 80
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - spawn_egg_item
+  - spawn_egg_dots_item
+  - bottle_of_enchanting_item
+  - jungle_sapling
+  - jungle_log
+  - jungle_leaves
+  - jungle_leaves_unfancy
+  - lamp
+  - lamp_lit
+  - circle_stone_brick
+  - creeper_sandstone
+  - mummy_sandstone
+  - netherbrick
 release-10-patch.png:
   source_rect:
     width: 128

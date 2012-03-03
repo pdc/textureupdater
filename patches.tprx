@@ -2,11 +2,38 @@ label: Patches
 desc: Contains graphics for upgrading packs
 maps:
     - rx/maps/patches
-    - rx/maps/release-10
+    - rx/maps/release-12
 mix:
   pack: patches
   files:
     - "*.png"
+    - file: release-12-patch.png
+      source:
+        background: transparent
+        height: 48
+        width: 80
+      replace:
+      - cells:
+          bottle_of_enchanting_item: bottle_of_enchanting
+          spawn_egg_dots_item: spawn_egg_dots
+          spawn_egg_item: spawn_egg
+        pack:
+          href: minecraft:bin/minecraft.jar
+        source: gui/items.png
+      - cells:
+        - jungle_sapling
+        - jungle_log
+        - jungle_leaves
+        - jungle_leaves_unfancy
+        - lamp
+        - lamp_lit
+        - circle_stone_brick
+        - creeper_sandstone
+        - mummy_sandstone
+        - netherbrick
+        pack:
+          href: minecraft:bin/minecraft.jar
+        source: terrain.png
     - file: release-10-patch.png
       source:
         background: transparent

@@ -1,7 +1,7 @@
 desc: '{{ base.desc }}'
 label: '{{ base.label }} + Patches'
 maps:
-- {href: maps/release-10}
+- {href: maps/release-12}
 - {href: maps/patches}
 mix:
     files:
@@ -69,12 +69,16 @@ mix:
     - {file: title/mojang.png, if_missing: relax}
     -   file: terrain.png
         replace:
+        -   cells: [circle_stone_brick, creeper_sandstone, jungle_leaves, jungle_leaves_unfancy,
+                jungle_log, jungle_sapling, lamp, lamp_lit, mummy_sandstone, netherbrick]
+            pack: $patches
+            source: release-12-patch.png
         -   cells: [brewing_stand, brewing_stand_base, cauldron_bottom, cauldron_side,
                 cauldron_top, couldron_inside, enchantment_table_bottom, enchantment_table_inside,
                 enchantment_table_side, enchantment_table_top, end_portal_eye_of_ender,
                 end_portal_frame_bottom, end_portal_frame_side, end_portal_frame_top,
                 lily_pad, mycel_side, mycel_top, nether_wart_large, nether_wart_medium,
-                nether_wart_small, netherbrick]
+                nether_wart_small]
             pack: $patches
             source: release-10-patch.png
         -   cells: [border, border_corner, brown_mushroom_top, cracked_stone_brick,
@@ -101,6 +105,10 @@ mix:
     -   file: gui/items.png
         if_missing: relax
         replace:
+        -   cells: {bottle_of_enchanting: bottle_of_enchanting_item, spawn_egg: spawn_egg_item,
+                spawn_egg_dots: spawn_egg_dots_item}
+            pack: $patches
+            source: release-12-patch.png
         -   cells: {black_and_red_sphere: black_and_red_sphere_item, blaze_dust: blaze_dust_item,
                 blaze_rod: blaze_rod_item, brewing_stand: brewing_stand_item, cauldron: cauldron_item,
                 eye_of_ender: eye_of_ender_item, fermented_spider_eye: fermented_spider_eye_item,
@@ -136,8 +144,8 @@ mix:
             source: beta-13-patch.png
     pack: $base
 packs:
-    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.006.zip'}
+    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.007.zip'}
 parameters:
     packs:
     -   name: base
-        unjumble: {href: maps/release-10}
+        unjumble: {href: maps/release-12}
