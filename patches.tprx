@@ -25,12 +25,14 @@ mix:
         - jungle_log
         - jungle_leaves
         - jungle_leaves_unfancy
+        - pine_planks
+        - jungle_planks
+        - birch_planks
         - lamp
         - lamp_lit
         - circle_stone_brick
         - creeper_sandstone
         - mummy_sandstone
-        - netherbrick
         pack:
           href: minecraft:bin/minecraft.jar
         source: terrain.png

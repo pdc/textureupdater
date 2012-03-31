@@ -14,12 +14,14 @@ release-12-patch.png:
   - jungle_log
   - jungle_leaves
   - jungle_leaves_unfancy
+  - pine_planks
+  - jungle_planks
+  - birch_planks
   - lamp
   - lamp_lit
   - circle_stone_brick
   - creeper_sandstone
   - mummy_sandstone
-  - netherbrick
 release-10-patch.png:
   source_rect:
     width: 128

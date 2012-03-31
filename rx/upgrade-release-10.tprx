@@ -13,8 +13,9 @@ mix:
     - '*.png'
     -   file: terrain.png
         replace:
-        -   cells: [circle_stone_brick, creeper_sandstone, jungle_leaves, jungle_leaves_unfancy,
-                jungle_log, jungle_sapling, lamp, lamp_lit, mummy_sandstone, netherbrick]
+        -   cells: [birch_planks, circle_stone_brick, creeper_sandstone, jungle_leaves,
+                jungle_leaves_unfancy, jungle_log, jungle_planks, jungle_sapling,
+                lamp, lamp_lit, mummy_sandstone, pine_planks]
             pack: $patches
             source: release-12-patch.png
     -   file: gui/items.png

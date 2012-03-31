@@ -1,4 +1,4 @@
-# Map for Minecraft 1.0 based on squinting at the image files
+# Map for Minecraft 1.0 based on squinting at the image files.
 -
     href: release-10
 -
@@ -39,6 +39,19 @@
             names:
                 - jungle_leaves
                 - jungle_leaves_unfancy
+        -
+            source_rect:
+                x: 96
+                y: 192
+                width: 32
+                height: 32
+            cell_rect:
+                width: 16
+                height: 16
+            names:
+                - pine_planks
+                - jungle_planks
+                - birch_planks
         -
             source_rect:
                 x: 48

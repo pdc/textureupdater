@@ -69,8 +69,9 @@ mix:
     - {file: title/mojang.png, if_missing: relax}
     -   file: terrain.png
         replace:
-        -   cells: [circle_stone_brick, creeper_sandstone, jungle_leaves, jungle_leaves_unfancy,
-                jungle_log, jungle_sapling, lamp, lamp_lit, mummy_sandstone, netherbrick]
+        -   cells: [birch_planks, circle_stone_brick, creeper_sandstone, jungle_leaves,
+                jungle_leaves_unfancy, jungle_log, jungle_planks, jungle_sapling,
+                lamp, lamp_lit, mummy_sandstone, pine_planks]
             pack: $patches
             source: release-12-patch.png
         -   cells: [brewing_stand, brewing_stand_base, cauldron_bottom, cauldron_side,
@@ -78,7 +79,7 @@ mix:
                 enchantment_table_side, enchantment_table_top, end_portal_eye_of_ender,
                 end_portal_frame_bottom, end_portal_frame_side, end_portal_frame_top,
                 lily_pad, mycel_side, mycel_top, nether_wart_large, nether_wart_medium,
-                nether_wart_small]
+                nether_wart_small, netherbrick]
             pack: $patches
             source: release-10-patch.png
         -   cells: [border, border_corner, brown_mushroom_top, cracked_stone_brick,
