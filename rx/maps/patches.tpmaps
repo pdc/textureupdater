@@ -1,53 +1,204 @@
-# What there is to find in the patches pack.
-release-13-patch.png:
+beta-12-patch.png:
+- cell_rect:
+    height: 16
+    width: 16
+  names:
+  - black_wool
+  - gray_wool
+  - red_wool
+  - pink_wool
+  - green_wool
+  - lime_wool
+  - brown_wool
+  - yellow_wool
+  - blue_wool
+  - light_blue_wool
+  - purple_wool
+  - magenta_wool
+  - cyan_wool
+  - orange_wool
+  - light_gray_wool
+  - _
+  - lapis_lazuli
+  - dispenser
+  - lapis_lazuli_ore
+  - furnace_top
+  - sandstone_top
+  - cake_top
+  - sandstone_side
+  - cake_bottom
+  - sandstone_bottom
+  - cake_icon
+  - cake_side
+  - cake_slice
+  - pine_log
+  - birch_log
+  - pine_leaves
+  - pine_leaves_unfancy
+  source_rect:
+    height: 256
+    width: 32
+- cell_rect:
+    height: 16
+    width: 16
+  names:
+  - ink_sac_item
+  - gray_dye_item
+  - rose_red_item
+  - pink_dye_item
+  - cactus_green_item
+  - lime_dye_item
+  - brown_dye_item
+  - dandelion_yellow_item
+  - lapis_lazuli_item
+  - light_blue_dye_item
+  - purple_dye_item
+  - magenta_dye_item
+  - cyan_dye_item
+  - orange_dye_item
+  - light_gray_dye_item
+  - bonemeal_item
+  - sugar_item
+  - cake_item
+  - bone_item
+  - _
+  source_rect:
+    height: 160
+    left: 32
+    width: 32
+beta-13-patch.png:
   cell_rect:
     height: 16
     width: 16
   names:
-  - ruby_looking_thing_item
-  - emerald_item
-  - book_and_quill_item
-  - written_book_item
-  - emerald
-  - cocoa_large
-  - cocoa_medium
-  - cocoa_small
-  - emerald_ore
-  - tripwire_hook
-  - tripwire
+  - _
+  - bed_top_foot
+  - bed_top_head
+  - _
+  - repeater
+  - redstone_mask
+  - repeater_item
+  - bed_foot
+  - bed_side_foot
+  - bed_side_head
+  - bed_head
+  - repeater_lit
+  - redstone_line_mask
+  - bed_item
   source_rect:
-    height: 48
+    height: 32
+    width: 112
+beta-14-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - cookie_item
+  source_rect:
+    height: 16
+    width: 16
+beta-15-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - birch_sapling
+  - spruce_sapling
+  - grass_edge
+  - redstone_a
+  - power_rail
+  - power_rail_lit
+  - detector_rail
+  - redstone_b
+  source_rect:
+    height: 32
     width: 64
-release-12-patch.png:
-  source_rect:
-    height: 48
-    width: 80
+beta-16-patch.png:
   cell_rect:
     height: 16
     width: 16
   names:
-  - spawn_egg_item
-  - spawn_egg_dots_item
-  - bottle_of_enchanting_item
-  - jungle_sapling
-  - jungle_log
-  - jungle_leaves
-  - jungle_leaves_unfancy
-  - pine_planks
-  - jungle_planks
-  - birch_planks
-  - lamp
-  - lamp_lit
-  - circle_stone_brick
-  - chiseled_sandstone
-  - smooth_sandstone
-release-10-patch.png:
+  - tall_grass
+  - tall_grass_under
+  - dead_shrub
+  - fern
+  - map_item
+  - _
+  - _
+  - trapdoor
   source_rect:
-    width: 128
-    height: 96
+    height: 32
+    width: 64
+beta-17-patch.png:
   cell_rect:
-    width: 16
     height: 16
+    width: 16
+  names:
+  - sticky_piston_face
+  - piston_face
+  - piston_box_side
+  - piston_box_bottom
+  - piston_box_top
+  - shears_item
+  - bed_foot
+  - bed_side_foot
+  - bed_side_head
+  - bed_head
+  - cake_side
+  - cake_slice
+  source_rect:
+    height: 32
+    width: 96
+beta-18-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - stone_brick
+  - mossy_stone_brick
+  - cracked_stone_brick
+  - iron_bars
+  - glass_pane_top
+  - stalk
+  - stalk_corner
+  - vines
+  - red_mushroom_top
+  - brown_mushroom_top
+  - mushroom_stalk_side
+  - mushroom_stalk_top
+  - footsteps
+  - border
+  - border_corner
+  - sparkle
+  - melon_side
+  - melon_top
+  - _
+  - _
+  - _
+  - _
+  - _
+  - _
+  - bow_pull_item
+  - bow_pull_more_item
+  - bow_pull_most_item
+  - melon_item
+  - raw_porkchop_item
+  - cooked_porkchop_item
+  - raw_beef_item
+  - cooked_beef_item
+  - raw_chicken_item
+  - cooked_chicken_item
+  - melon_seeds_item
+  - pumpkin_seeds_item
+  - rotten_flesh_item
+  - ender_pearl_item
+  source_rect:
+    height: 80
+    width: 128
+release-10-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
   names:
   - black_and_red_sphere_item
   - blaze_rod_item
@@ -95,202 +246,87 @@ release-10-patch.png:
   - nether_wart_small
   - nether_wart_medium
   - nether_wart_large
-beta-18-patch.png:
   source_rect:
+    height: 96
     width: 128
+release-12-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - spawn_egg_item
+  - spawn_egg_dots_item
+  - bottle_of_enchanting_item
+  - jungle_sapling
+  - jungle_log
+  - jungle_leaves
+  - jungle_leaves_unfancy
+  - pine_planks
+  - jungle_planks
+  - birch_planks
+  - lamp
+  - lamp_lit
+  - circle_stone_brick
+  - chiseled_sandstone
+  - chiseled_sandstone
+  source_rect:
+    height: 48
+    width: 80
+release-13-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - ruby_item
+  - emerald_item
+  - book_and_quill_item
+  - written_book_item
+  - emerald
+  - cocoa_large
+  - cocoa_medium
+  - cocoa_small
+  - emerald_ore
+  - tripwire_hook
+  - tripwire
+  source_rect:
+    height: 48
+    width: 64
+release-14-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - carrot_and_stick_item
+  - baked_potato_item
+  - poisonous_potato_item
+  - golden_carrot_item
+  - potato_item
+  - carrot_item
+  - pumpkin_pie_item
+  - nether_star_item
+  - empty_map_item
+  - item_frame_item
+  - wat_item
+  - blank_item
+  - whut_item
+  - what_item
+  - skeleton_head_item
+  - wither_skeleton_head_item
+  - zombie_head_item
+  - steve_head_item
+  - creeper_head_item
+  - controller_side
+  - controller_bottom
+  - flower_pot
+  - vegetables_0
+  - vegetables_1
+  - vegetables_2
+  - carrots
+  - potatoes
+  - anvil_sides
+  - anvil_slightly_damaged
+  - anvil_undamaged
+  - anvil_very_damaged
+  source_rect:
     height: 80
-  cell_rect:
-    width: 16
-    height: 16
-  names:
-    - stone_brick
-    - mossy_stone_brick
-    - cracked_stone_brick
-    - iron_bars
-    - glass_pane_top
-    - stalk
-    - stalk_corner
-    - vines
-    - red_mushroom_top
-    - brown_mushroom_top
-    - mushroom_stalk_side
-    - mushroom_stalk_top
-    - footsteps
-    - border
-    - border_corner
-    - sparkle
-    - melon_side
-    - melon_top
-    - _
-    - _
-    - _
-    - _
-    - _
-    - _
-    - bow_pull_item
-    - bow_pull_more_item
-    - bow_pull_most_item
-    - melon_item
-    - raw_porkchop_item
-    - cooked_porkchop_item
-    - raw_beef_item
-    - cooked_beef_item
-    - raw_chicken_item
-    - cooked_chicken_item
-    - melon_seeds_item
-    - pumpkin_seeds_item
-    - rotten_flesh_item
-    - ender_pearl_item
-beta-17-patch.png:
-  source_rect:
-    width: 96
-    height: 32
-  cell_rect:
-    width: 16
-    height: 16
-  names:
-    - sticky_piston_face
-    - piston_face
-    - piston_box_side
-    - piston_box_bottom
-    - piston_box_top
-    - shears_item
-    - bed_foot
-    - bed_side_foot
-    - bed_side_head
-    - bed_head
-    - cake_side
-    - cake_slice
-beta-16-patch.png:
-  source_rect:
-    width: 64
-    height: 32
-  cell_rect:
-    width: 16
-    height: 16
-  names:
-    - tall_grass
-    - tall_grass_under
-    - dead_shrub
-    - fern
-    - map_item
-    - _
-    - _
-    - trapdoor
-beta-15-patch.png:
-  source_rect:
-    width: 64
-    height: 32
-  cell_rect:
-    width: 16
-    height: 16
-  names:
-    - birch_sapling
-    - spruce_sapling
-    - grass_edge
-    - redstone_a
-    - power_rail
-    - power_rail_lit
-    - detector_rail
-    - redstone_b
-beta-14-patch.png:
-  source_rect:
-    width: 16
-    height: 16
-  cell_rect:
-    width: 16
-    height: 16
-  names:
-    - cookie_item
-beta-13-patch.png:
-  source_rect:
     width: 112
-    height: 32
-  cell_rect:
-    width: 16
-    height: 16
-  names:
-    - _
-    - bed_top_foot
-    - bed_top_head
-    - _
-    - repeater
-    - redstone_mask
-    - repeater_item
-    - bed_foot
-    - bed_side_foot
-    - bed_side_head
-    - bed_head
-    - repeater_lit
-    - redstone_line_mask
-    - bed_item
-beta-12-patch.png:
-  -
-    source_rect:
-      width: 32
-      height: 256
-    cell_rect:
-      width: 16
-      height: 16
-    names:
-      - black_wool
-      - gray_wool
-      - red_wool
-      - pink_wool
-      - green_wool
-      - lime_wool
-      - brown_wool
-      - yellow_wool
-      - blue_wool
-      - light_blue_wool
-      - purple_wool
-      - magenta_wool
-      - cyan_wool
-      - orange_wool
-      - light_gray_wool
-      - _
-      - lapis_lazuli
-      - dispenser
-      - lapis_lazuli_ore
-      - furnace_top
-      - sandstone_top
-      - cake_top
-      - sandstone_side
-      - cake_bottom
-      - sandstone_bottom
-      - cake_icon
-      - cake_side
-      - cake_slice
-      - pine_log
-      - birch_log
-      - pine_leaves
-      - pine_leaves_unfancy
-  -
-    source_rect:
-      left: 32
-      width: 32
-      height: 160
-    cell_rect:
-      width: 16
-      height: 16
-    names:
-      - ink_sac_item
-      - gray_dye_item
-      - rose_red_item
-      - pink_dye_item
-      - cactus_green_item
-      - lime_dye_item
-      - brown_dye_item
-      - dandelion_yellow_item
-      - lapis_lazuli_item
-      - light_blue_dye_item
-      - purple_dye_item
-      - magenta_dye_item
-      - cyan_dye_item
-      - orange_dye_item
-      - light_gray_dye_item
-      - bonemeal_item
-      - sugar_item
-      - cake_item
-      - bone_item
-      - _

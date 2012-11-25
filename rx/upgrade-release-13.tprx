@@ -18,15 +18,6 @@ mix:
                 vegetables_0, vegetables_1, vegetables_2]
             pack: $patches
             source: release-14-patch.png
-        -   cells: [cocoa_large, cocoa_medium, cocoa_small, emerald, emerald_ore,
-                tripwire, tripwire_hook]
-            pack: $patches
-            source: release-13-patch.png
-        -   cells: [birch_planks, chiseled_sandstone, circle_stone_brick, jungle_leaves,
-                jungle_leaves_unfancy, jungle_log, jungle_planks, jungle_sapling,
-                lamp, lamp_lit, pine_planks]
-            pack: $patches
-            source: release-12-patch.png
     -   file: gui/items.png
         if_missing: relax
         replace:
@@ -39,14 +30,6 @@ mix:
                 wither_skeleton_head: wither_skeleton_head_item, zombie_head: zombie_head_item}
             pack: $patches
             source: release-14-patch.png
-        -   cells: {book_and_quill: book_and_quill_item, emerald: emerald_item, ruby: ruby_item,
-                written_book: written_book_item}
-            pack: $patches
-            source: release-13-patch.png
-        -   cells: {bottle_of_enchanting: bottle_of_enchanting_item, spawn_egg: spawn_egg_item,
-                spawn_egg_dots: spawn_egg_dots_item}
-            pack: $patches
-            source: release-12-patch.png
     pack: $base
 packs:
     patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.009.zip'}

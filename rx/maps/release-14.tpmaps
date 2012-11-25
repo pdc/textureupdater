@@ -1,0 +1,142 @@
+# Map for Minecraft 1.4 based on squinting at the image files.
+# New iblocks: Anvil, Command block, Beacon, Flower Pot, Item frame, Vegetables, Carrots, Potatoes
+-
+    href: release-13
+-
+    terrain.png:
+        -
+            terrain.png
+        -
+            source_rect:
+                x: 128
+                y: 176
+                width: 48
+                height: 16
+            cell_rect:
+                width: 16
+                height: 16
+            names:
+                - controller_side
+                - controller_bottom
+                - flower_pot # Actually 2 textures in one cell
+        -
+            source_rect:
+                x: 128
+                y: 192
+                width: 80
+                height: 16
+            cell_rect:
+                width: 16
+                height: 16
+            names:
+                - vegetables_0
+                - vegetables_1
+                - vegetables_2
+                - carrots
+                - potatoes
+        -
+            source_rect:
+                x: 112
+                y: 208
+                width: 32
+                height: 32
+            cell_rect:
+                width: 16
+                height: 16
+            names:
+                - anvil_sides
+                - anvil_slightly_damaged
+                - anvil_undamaged
+                - anvil_very_damaged
+    gui/items.png:
+    -
+        gui/items.png
+    -
+        source_rect:
+            x: 96
+            y: 96
+            width: 16
+            height: 64
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - carrot_and_stick
+        - baked_potato
+        - poisonous_potato
+        - golden_carrot
+    -
+        source_rect:
+            x: 112
+            y: 112
+            width: 32
+            height: 16
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - potato
+        - carrot
+    -
+        source_rect:
+            x: 112
+            y: 144
+            width: 16
+            height: 16
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - pumpkin_pie
+    -
+        source_rect:
+            x: 144
+            y: 176
+            width: 16
+            height: 16
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - nether_star
+    -
+        source_rect:
+            x: 208
+            y: 192
+            width: 32
+            height: 16
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - empty_map
+        - item_frame
+    -
+        source_rect:
+            x: 0
+            y: 144
+            width: 16
+            height: 64
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - wat
+        - blank
+        - whut
+        - what
+    -
+        source_rect:
+            x: 0
+            y: 224
+            width: 80
+            height: 16
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - skeleton_head
+        - wither_skeleton_head
+        - zombie_head
+        - steve_head
+        - creeper_head

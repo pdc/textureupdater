@@ -75,7 +75,7 @@ class RecipeMaker(object):
         recipe = yaml.load(StringIO(recipe_template))
         recipe['parameters']['packs'][0]['unjumble']['href'] = 'maps/%s' % self.minecraft_version
         if is_local:
-            recipe['packs']['patches'] = {'file': '../patches'}
+            recipe['packs']['patches'] = {'file': '../patches.zip'}
         else:
             recipe['packs']['patches'] = {'href': 'http://static.texturejam.org.uk/texturepacks/patches.%s.zip' % self.patches_version}
         recipe['maps'][0]['href'] = 'maps/%s' % self.minecraft_version
@@ -131,29 +131,29 @@ class RecipeMaker(object):
             print >>sys.stderr, 'Wrote YAML to', out_file_path
         else:
             yaml.dump(recipe, sys.stdout, indent=4)
-            
+
 def main(argv=None):
     project_dir = os.path.join(os.path.dirname(__file__), '..')
     with open(os.path.join(project_dir, 'VERSION'), 'rt') as strm:
         patches_version =  strm.read().strip()
-        
+
     recipes_dir = os.path.join(project_dir, 'rx')
-    
+
     parser = argparse.ArgumentParser(description='Build the recipe (.tprx) files for updating to lates Minecraft version')
-    parser.add_argument('-l', '--local', action='store_true', dest='is_local', 
+    parser.add_argument('-l', '--local', action='store_true', dest='is_local',
                 help='Use local patches pack, not the one installed on texturejam.org.uk')
     parser.add_argument('-o', '--output',
                 default=recipes_dir, metavar='DIR', dest='output_dir',
                 help='Save the recipe files in this directory. Default is %s' % recipes_dir)
     options = parser.parse_args()
-    
+
     tpmaps_file = os.path.join(recipes_dir, 'maps/patches.tpmaps')
     maker = RecipeMaker(tpmaps_file, patches_version)
     for version in ['beta-11'] + sorted(maker.versions)[:-1]:
         print >>sys.stderr, version, '...',
         file_name = 'upgrade-%s.tprx' % version
-        maker.make_recipe(from_version=version, 
-            is_local=options.is_local, 
+        maker.make_recipe(from_version=version,
+            is_local=options.is_local,
             out_file_path=os.path.join(options.output_dir, file_name))
 
 if __name__ == '__main__':

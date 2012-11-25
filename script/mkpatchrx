@@ -15,21 +15,21 @@ from glob import glob
 import yaml
 
 project_dir = path.dirname(path.dirname(__file__))
+
+
 atlas_dir = path.join(project_dir, 'rx/maps')
 new_patch_name = os.path.basename(max(glob(os.path.join(atlas_dir, '*.tpmaps'))))[:-7]
 print 'Creating patch for', new_patch_name
-file_name = os.path.join(atlas_dir, '{0}.tpmaps'.format(new_patch_name))
-with open(file_name, 'rb') as strm:
-    src_atlas = yaml.load(strm)
 
-file_cells = sorted((fn, [n for x in mp[1:] for n in x['names'] if n != '_']) for (fn, mp) in src_atlas[1].items())
-
+# Make a list of the cells we will need in the patch.
 
 def munged_name(file_name, cell_name):
-    """Cells in items.png get _item appended to their name."""
+    """Return the uniquified name fro this cell.
+
+    Cells in items.png get _item appended to their name."""
     if file_name == 'terrain.png':
         return cell_name
-    affix = file_name[:-4]
+    affix = file_name[:-4] # Strip off the .png
     p = affix.rfind('/')
     if p > 0:
         affix = affix[p + 1:]
@@ -37,12 +37,19 @@ def munged_name(file_name, cell_name):
         affix = affix[:-1]
     return '{1}_{0}'.format(affix, cell_name)
 
+file_name = os.path.join(atlas_dir, '{0}.tpmaps'.format(new_patch_name))
+with open(file_name, 'rb') as strm:
+    src_atlas = yaml.load(strm)
+
+file_cells = sorted((fn, [n for x in mp[1:] for n in x['names'] if n != '_']) for (fn, mp) in src_atlas[1].items())
+
 cells = [n for (fn, ns) in file_cells for n in ns]
 munged_cells = [munged_name(fn, n) for (fn, ns) in file_cells for n in ns]
 
+# Calculate the dimensions of the texture image.
 n = int(len(cells) ** 0.5)
 m = (len(cells) + n - 1) // n
-print len(cells), m, 'x', n, '=', n * m
+print len(cells), 'cells, arranged', m, 'x', n
 
 tpmap = {
     '{0}-patch.png'.format(new_patch_name): {
@@ -58,13 +65,23 @@ tpmap = {
     },
 }
 
-print '# This goes in patches.tpmaps:'
-print '# --- cut here ---'
-yaml.dump(tpmap, sys.stdout, default_flow_style=False)
-print '# --- cut here ---'
-print
+if False:
+    print '# This goes in patches.tpmaps:'
+    print '# --- cut here ---'
+    yaml.dump(tpmap, sys.stdout, default_flow_style=False)
+    print '# --- cut here ---'
+    print
+else:
+    patches_path = os.path.join(project_dir, 'rx/maps/patches.tpmaps')
+    with open(patches_path, 'r') as strm:
+        patches_atlas = yaml.load(strm)
+    patches_atlas.update(tpmap)
+    with open(patches_path, 'w') as strm:
+        yaml.dump(patches_atlas, strm, default_flow_style=False)
+    print '# Wrote', patches_path
 
-partial_rx = {'mix': [u'…', {
+
+new_file_spec = {
         'file': '{0}-patch.png'.format(new_patch_name),
         'source': {
             'background': 'transparent',
@@ -80,10 +97,28 @@ partial_rx = {'mix': [u'…', {
             }
             for (fn, ns) in file_cells
         ]
-    }]}
+    }
 
-print '# This goes in patches.tprx:'
-print '# --- cut here ---'
-yaml.dump(partial_rx, sys.stdout, default_flow_style=False)
-print '# --- cut here ---'
-print
+if False:
+    print '# This goes in patches.tprx:'
+    print '# --- cut here ---'
+    yaml.dump(partial_rx, sys.stdout, default_flow_style=False)
+    print '# --- cut here ---'
+    print
+else:
+    recipe_path = os.path.join(project_dir, 'patches.tprx')
+    with open(recipe_path, 'r') as strm:
+        recipe_spec =  yaml.load(strm)
+    files_spec = recipe_spec['mix']['files']
+    for i, file_spec in enumerate(files_spec):
+        if hasattr(file_spec, 'items') and file_spec['file'] == new_file_spec['file']:
+            files_spec[i] = new_file_spec
+            break
+    else:
+        files_spec[1:1] = [new_file_spec]
+    recipe_spec['maps'][-1] = 'rx/maps/{0}'.format(new_patch_name)
+    with open(recipe_path, 'w') as strm:
+        yaml.dump(recipe_spec, strm, default_flow_style=False)
+    print '# Wrote recipe to', recipe_path
+
+

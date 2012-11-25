@@ -1,7 +1,7 @@
 desc: '{{ base.desc }}'
 label: '{{ base.label }} + Patches'
 maps:
-- {href: maps/release-13}
+- {href: maps/release-14}
 - {href: maps/patches}
 mix:
     files:
@@ -69,13 +69,18 @@ mix:
     - {file: title/mojang.png, if_missing: relax}
     -   file: terrain.png
         replace:
+        -   cells: [anvil_sides, anvil_slightly_damaged, anvil_undamaged, anvil_very_damaged,
+                carrots, controller_bottom, controller_side, flower_pot, potatoes,
+                vegetables_0, vegetables_1, vegetables_2]
+            pack: $patches
+            source: release-14-patch.png
         -   cells: [cocoa_large, cocoa_medium, cocoa_small, emerald, emerald_ore,
                 tripwire, tripwire_hook]
             pack: $patches
             source: release-13-patch.png
         -   cells: [birch_planks, chiseled_sandstone, circle_stone_brick, jungle_leaves,
                 jungle_leaves_unfancy, jungle_log, jungle_planks, jungle_sapling,
-                lamp, lamp_lit, pine_planks, smooth_sandstone]
+                lamp, lamp_lit, pine_planks]
             pack: $patches
             source: release-12-patch.png
         -   cells: [brewing_stand, brewing_stand_base, cauldron_bottom, cauldron_side,
@@ -106,7 +111,16 @@ mix:
     -   file: gui/items.png
         if_missing: relax
         replace:
-        -   cells: {book_and_quill: book_and_quill_item, emerald: emerald_item, ruby_looking_thing: ruby_looking_thing_item,
+        -   cells: {baked_potato: baked_potato_item, blank: blank_item, carrot: carrot_item,
+                carrot_and_stick: carrot_and_stick_item, creeper_head: creeper_head_item,
+                empty_map: empty_map_item, golden_carrot: golden_carrot_item, item_frame: item_frame_item,
+                nether_star: nether_star_item, poisonous_potato: poisonous_potato_item,
+                potato: potato_item, pumpkin_pie: pumpkin_pie_item, skeleton_head: skeleton_head_item,
+                steve_head: steve_head_item, wat: wat_item, what: what_item, whut: whut_item,
+                wither_skeleton_head: wither_skeleton_head_item, zombie_head: zombie_head_item}
+            pack: $patches
+            source: release-14-patch.png
+        -   cells: {book_and_quill: book_and_quill_item, emerald: emerald_item, ruby: ruby_item,
                 written_book: written_book_item}
             pack: $patches
             source: release-13-patch.png
@@ -150,4 +164,4 @@ packs:
 parameters:
     packs:
     -   name: base
-        unjumble: {href: maps/release-13}
+        unjumble: {href: maps/release-14}

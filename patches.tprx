@@ -1,128 +1,168 @@
-# This is a texture pack containing only the bit missing from
-# old testure packs that are needed to upgrade them to worj
-# with the current Minecraft version.
-label: Patches
 desc: Contains graphics for upgrading packs
+label: Patches
 maps:
-    - rx/maps/patches
-    # Update the following line to most recent release
-    - rx/maps/release-13
+- rx/maps/patches
+- rx/maps/release-14
 mix:
-  pack: patches
   files:
-    - "*.png"
-    # Add new files after this line (reverse cronological order)
-    - file: release-13-patch.png
-      replace:
-      - cells:
-          book_and_quill_item: book_and_quill
-          emerald_item: emerald
-          ruby_looking_thing_item: ruby_looking_thing
-          written_book_item: written_book
-        pack:
-          href: minecraft:bin/minecraft.jar
-        source: gui/items.png
-      - cells:
-        - emerald
-        - cocoa_large
-        - cocoa_medium
-        - cocoa_small
-        - emerald_ore
-        - tripwire_hook
-        - tripwire
-        pack:
-          href: minecraft:bin/minecraft.jar
-        source: terrain.png
-      source:
-        background: transparent
-        height: 48
-        width: 64
-    - file: release-12-patch.png
-      source:
-        background: transparent
-        height: 48
-        width: 80
-      replace:
-      - cells:
-          bottle_of_enchanting_item: bottle_of_enchanting
-          spawn_egg_dots_item: spawn_egg_dots
-          spawn_egg_item: spawn_egg
-        pack:
-          href: minecraft:bin/minecraft.jar
-        source: gui/items.png
-      - cells:
-        - jungle_sapling
-        - jungle_log
-        - jungle_leaves
-        - jungle_leaves_unfancy
-        - pine_planks
-        - jungle_planks
-        - birch_planks
-        - lamp
-        - lamp_lit
-        - circle_stone_brick
-        - chiseled_sandstone
-        - chiseled_sandstone
-        pack:
-          href: minecraft:bin/minecraft.jar
-        source: terrain.png
-    - file: release-10-patch.png
-      source:
-        background: transparent
-        height: 96
-        width: 128
-      replace:
-      - cells:
-          black_and_red_sphere_item: black_and_red_sphere
-          blaze_dust_item: blaze_dust
-          blaze_rod_item: blaze_rod
-          brewing_stand_item: brewing_stand
-          cauldron_item: cauldron
-          eye_of_ender_item: eye_of_ender
-          fermented_spider_eye_item: fermented_spider_eye
-          ghast_tear_item: ghast_tear
-          glass_bottle_item: glass_bottle
-          glistering_melon_item: glistering_melon
-          gold_nugget_item: gold_nugget
-          magma_cream_item: magma_cream
-          music_disc_11_item: music_disc_11
-          music_disc_blocks_item: music_disc_blocks
-          music_disc_chirp_item: music_disc_chirp
-          music_disc_far_item: music_disc_far
-          music_disc_mall_item: music_disc_mall
-          music_disc_mellohi_item: music_disc_mellohi
-          music_disc_stal_item: music_disc_stal
-          music_disc_strad_item: music_disc_strad
-          music_disc_ward_item: music_disc_ward
-          nether_wart_item: nether_wart
-          spider_eye_item: spider_eye
-          splash_bottle_item: splash_bottle
-          squiggle_item: squiggle
-        pack:
-          href: minecraft:bin/minecraft.jar
-        source: gui/items.png
-      - cells:
-        - lily_pad
-        - mycel_side
-        - mycel_top
-        - cauldron_top
-        - couldron_inside
-        - cauldron_side
-        - cauldron_bottom
-        - brewing_stand_base
-        - brewing_stand
-        - end_portal_frame_top
-        - end_portal_frame_side
-        - end_portal_eye_of_ender
-        - end_portal_frame_bottom
-        - enchantment_table_top
-        - enchantment_table_inside
-        - enchantment_table_side
-        - enchantment_table_bottom
-        - netherbrick
-        - nether_wart_small
-        - nether_wart_medium
-        - nether_wart_large
-        pack:
-          href: minecraft:bin/minecraft.jar
-        source: terrain.png
+  - '*.png'
+  - file: release-14-patch.png
+    replace:
+    - cells:
+        baked_potato_item: baked_potato
+        blank_item: blank
+        carrot_and_stick_item: carrot_and_stick
+        carrot_item: carrot
+        creeper_head_item: creeper_head
+        empty_map_item: empty_map
+        golden_carrot_item: golden_carrot
+        item_frame_item: item_frame
+        nether_star_item: nether_star
+        poisonous_potato_item: poisonous_potato
+        potato_item: potato
+        pumpkin_pie_item: pumpkin_pie
+        skeleton_head_item: skeleton_head
+        steve_head_item: steve_head
+        wat_item: wat
+        what_item: what
+        whut_item: whut
+        wither_skeleton_head_item: wither_skeleton_head
+        zombie_head_item: zombie_head
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: gui/items.png
+    - cells:
+      - controller_side
+      - controller_bottom
+      - flower_pot
+      - vegetables_0
+      - vegetables_1
+      - vegetables_2
+      - carrots
+      - potatoes
+      - anvil_sides
+      - anvil_slightly_damaged
+      - anvil_undamaged
+      - anvil_very_damaged
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: terrain.png
+    source:
+      background: transparent
+      height: 80
+      width: 112
+  - file: release-13-patch.png
+    replace:
+    - cells:
+        book_and_quill_item: book_and_quill
+        emerald_item: emerald
+        ruby_item: ruby
+        written_book_item: written_book
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: gui/items.png
+    - cells:
+      - emerald
+      - cocoa_large
+      - cocoa_medium
+      - cocoa_small
+      - emerald_ore
+      - tripwire_hook
+      - tripwire
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: terrain.png
+    source:
+      background: transparent
+      height: 48
+      width: 64
+  - file: release-12-patch.png
+    replace:
+    - cells:
+        bottle_of_enchanting_item: bottle_of_enchanting
+        spawn_egg_dots_item: spawn_egg_dots
+        spawn_egg_item: spawn_egg
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: gui/items.png
+    - cells:
+      - jungle_sapling
+      - jungle_log
+      - jungle_leaves
+      - jungle_leaves_unfancy
+      - pine_planks
+      - jungle_planks
+      - birch_planks
+      - lamp
+      - lamp_lit
+      - circle_stone_brick
+      - chiseled_sandstone
+      - chiseled_sandstone
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: terrain.png
+    source:
+      background: transparent
+      height: 48
+      width: 80
+  - file: release-10-patch.png
+    replace:
+    - cells:
+        black_and_red_sphere_item: black_and_red_sphere
+        blaze_dust_item: blaze_dust
+        blaze_rod_item: blaze_rod
+        brewing_stand_item: brewing_stand
+        cauldron_item: cauldron
+        eye_of_ender_item: eye_of_ender
+        fermented_spider_eye_item: fermented_spider_eye
+        ghast_tear_item: ghast_tear
+        glass_bottle_item: glass_bottle
+        glistering_melon_item: glistering_melon
+        gold_nugget_item: gold_nugget
+        magma_cream_item: magma_cream
+        music_disc_11_item: music_disc_11
+        music_disc_blocks_item: music_disc_blocks
+        music_disc_chirp_item: music_disc_chirp
+        music_disc_far_item: music_disc_far
+        music_disc_mall_item: music_disc_mall
+        music_disc_mellohi_item: music_disc_mellohi
+        music_disc_stal_item: music_disc_stal
+        music_disc_strad_item: music_disc_strad
+        music_disc_ward_item: music_disc_ward
+        nether_wart_item: nether_wart
+        spider_eye_item: spider_eye
+        splash_bottle_item: splash_bottle
+        squiggle_item: squiggle
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: gui/items.png
+    - cells:
+      - lily_pad
+      - mycel_side
+      - mycel_top
+      - cauldron_top
+      - couldron_inside
+      - cauldron_side
+      - cauldron_bottom
+      - brewing_stand_base
+      - brewing_stand
+      - end_portal_frame_top
+      - end_portal_frame_side
+      - end_portal_eye_of_ender
+      - end_portal_frame_bottom
+      - enchantment_table_top
+      - enchantment_table_inside
+      - enchantment_table_side
+      - enchantment_table_bottom
+      - netherbrick
+      - nether_wart_small
+      - nether_wart_medium
+      - nether_wart_large
+      pack:
+        href: minecraft:bin/minecraft.jar
+      source: terrain.png
+    source:
+      background: transparent
+      height: 96
+      width: 128
+  pack: patches

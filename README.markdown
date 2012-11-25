@@ -40,8 +40,15 @@ use a command like this:
 
     maketexture --out=foobar+patches.zip base=foobar.zip rx/upgrade-beta-13.tprx
 
-This takes the ZIP file `foobar+patches.zip` that can be used to play
+This makes the ZIP file `foobar+patches.zip` that can be used to play
 the current Minecraft release.
+
+What are those files in the scripts folder?
+--------------------------------------------
+
+I have stopped drawing new tiles from scratch, and instead I use these scripts
+to generate the patches pack using imagery from the installed Minecraft
+textures.
 
 
   [1]: http://minecraft.net/

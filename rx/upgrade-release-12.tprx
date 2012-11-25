@@ -22,11 +22,6 @@ mix:
                 tripwire, tripwire_hook]
             pack: $patches
             source: release-13-patch.png
-        -   cells: [birch_planks, chiseled_sandstone, circle_stone_brick, jungle_leaves,
-                jungle_leaves_unfancy, jungle_log, jungle_planks, jungle_sapling,
-                lamp, lamp_lit, pine_planks]
-            pack: $patches
-            source: release-12-patch.png
     -   file: gui/items.png
         if_missing: relax
         replace:
@@ -43,10 +38,6 @@ mix:
                 written_book: written_book_item}
             pack: $patches
             source: release-13-patch.png
-        -   cells: {bottle_of_enchanting: bottle_of_enchanting_item, spawn_egg: spawn_egg_item,
-                spawn_egg_dots: spawn_egg_dots_item}
-            pack: $patches
-            source: release-12-patch.png
     pack: $base
 packs:
     patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.009.zip'}

@@ -1,0 +1,62 @@
+# Map for Minecraft 1.3 based on squinting at the image files.
+-
+    href: release-12
+-
+    terrain.png:
+        -
+            terrain.png
+        -
+            # Note that this replaces the old chest textures.
+            source_rect:
+                x: 144
+                y: 16
+                width: 16
+                height: 16
+            cell_rect:
+                width: 16
+                height: 16
+            names:
+                - emerald
+        -
+            source_rect:
+                x: 128
+                y: 160
+                width: 96
+                height: 16
+            cell_rect:
+                width: 16
+                height: 16
+            names:
+                - cocoa_large # actually 3 textures packed in one cell
+                - cocoa_medium
+                - cocoa_small
+                - emerald_ore
+                - tripwire_hook
+                - tripwire # top 4 pixels
+    gui/items.png:
+    -
+        gui/items.png
+    -
+        source_rect:
+            x: 160
+            y: 160
+            width: 16
+            height: 16
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - ruby
+    -
+        source_rect:
+            x: 160
+            y: 176
+            width: 48
+            height: 16
+        cell_rect:
+            width: 16
+            height: 16
+        names:
+        - emerald
+        - book_and_quill
+        - written_book
