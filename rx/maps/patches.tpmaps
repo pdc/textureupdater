@@ -1,4 +1,23 @@
 # What there is to find in the patches pack.
+release-13-patch.png:
+  cell_rect:
+    height: 16
+    width: 16
+  names:
+  - ruby_looking_thing_item
+  - emerald_item
+  - book_and_quill_item
+  - written_book_item
+  - emerald
+  - cocoa_large
+  - cocoa_medium
+  - cocoa_small
+  - emerald_ore
+  - tripwire_hook
+  - tripwire
+  source_rect:
+    height: 48
+    width: 64
 release-12-patch.png:
   source_rect:
     height: 48
@@ -20,8 +39,8 @@ release-12-patch.png:
   - lamp
   - lamp_lit
   - circle_stone_brick
-  - creeper_sandstone
-  - mummy_sandstone
+  - chiseled_sandstone
+  - smooth_sandstone
 release-10-patch.png:
   source_rect:
     width: 128

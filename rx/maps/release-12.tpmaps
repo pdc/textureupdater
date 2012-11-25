@@ -1,4 +1,4 @@
-# Map for Minecraft 1.0 based on squinting at the image files.
+# Map for Minecraft 1.2.5 based on squinting at the image files.
 -
     href: release-10
 -
@@ -75,8 +75,8 @@
                 width: 16
                 height: 16
             names:
-                - creeper_sandstone
-                - mummy_sandstone
+                - chiseled_sandstone
+                - smooth_sandstone
     gui/items.png:
     -
         gui/items.png

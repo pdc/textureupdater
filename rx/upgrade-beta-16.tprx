@@ -1,7 +1,7 @@
 desc: '{{ base.desc }}'
 label: '{{ base.label }} + Patches'
 maps:
-- {href: maps/release-12}
+- {href: maps/release-13}
 - {href: maps/patches}
 mix:
     files:
@@ -69,9 +69,13 @@ mix:
     - {file: title/mojang.png, if_missing: relax}
     -   file: terrain.png
         replace:
-        -   cells: [birch_planks, circle_stone_brick, creeper_sandstone, jungle_leaves,
+        -   cells: [cocoa_large, cocoa_medium, cocoa_small, emerald, emerald_ore,
+                tripwire, tripwire_hook]
+            pack: $patches
+            source: release-13-patch.png
+        -   cells: [birch_planks, chiseled_sandstone, circle_stone_brick, jungle_leaves,
                 jungle_leaves_unfancy, jungle_log, jungle_planks, jungle_sapling,
-                lamp, lamp_lit, mummy_sandstone, pine_planks]
+                lamp, lamp_lit, pine_planks, smooth_sandstone]
             pack: $patches
             source: release-12-patch.png
         -   cells: [brewing_stand, brewing_stand_base, cauldron_bottom, cauldron_side,
@@ -95,6 +99,10 @@ mix:
     -   file: gui/items.png
         if_missing: relax
         replace:
+        -   cells: {book_and_quill: book_and_quill_item, emerald: emerald_item, ruby_looking_thing: ruby_looking_thing_item,
+                written_book: written_book_item}
+            pack: $patches
+            source: release-13-patch.png
         -   cells: {bottle_of_enchanting: bottle_of_enchanting_item, spawn_egg: spawn_egg_item,
                 spawn_egg_dots: spawn_egg_dots_item}
             pack: $patches
@@ -125,8 +133,8 @@ mix:
             source: beta-17-patch.png
     pack: $base
 packs:
-    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.008.zip'}
+    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.009.zip'}
 parameters:
     packs:
     -   name: base
-        unjumble: {href: maps/release-12}
+        unjumble: {href: maps/release-13}

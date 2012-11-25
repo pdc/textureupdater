@@ -1,12 +1,42 @@
+# This is a texture pack containing only the bit missing from
+# old testure packs that are needed to upgrade them to worj
+# with the current Minecraft version.
 label: Patches
 desc: Contains graphics for upgrading packs
 maps:
     - rx/maps/patches
-    - rx/maps/release-12
+    # Update the following line to most recent release
+    - rx/maps/release-13
 mix:
   pack: patches
   files:
     - "*.png"
+    # Add new files after this line (reverse cronological order)
+    - file: release-13-patch.png
+      replace:
+      - cells:
+          book_and_quill_item: book_and_quill
+          emerald_item: emerald
+          ruby_looking_thing_item: ruby_looking_thing
+          written_book_item: written_book
+        pack:
+          href: minecraft:bin/minecraft.jar
+        source: gui/items.png
+      - cells:
+        - emerald
+        - cocoa_large
+        - cocoa_medium
+        - cocoa_small
+        - emerald_ore
+        - tripwire_hook
+        - tripwire
+        pack:
+          href: minecraft:bin/minecraft.jar
+        source: terrain.png
+      source:
+        background: transparent
+        height: 48
+        width: 64
     - file: release-12-patch.png
       source:
         background: transparent
@@ -31,8 +61,8 @@ mix:
         - lamp
         - lamp_lit
         - circle_stone_brick
-        - creeper_sandstone
-        - mummy_sandstone
+        - chiseled_sandstone
+        - chiseled_sandstone
         pack:
           href: minecraft:bin/minecraft.jar
         source: terrain.png

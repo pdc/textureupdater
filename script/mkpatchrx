@@ -10,14 +10,14 @@ texture packs as a series of deltas based on Minecraft Beta 1.1.
 import sys
 import os
 from os import path
+from glob import glob
 
 import yaml
 
-
-new_patch_name = 'release-12'
-
 project_dir = path.dirname(path.dirname(__file__))
 atlas_dir = path.join(project_dir, 'rx/maps')
+new_patch_name = os.path.basename(max(glob(os.path.join(atlas_dir, '*.tpmaps'))))[:-7]
+print 'Creating patch for', new_patch_name
 file_name = os.path.join(atlas_dir, '{0}.tpmaps'.format(new_patch_name))
 with open(file_name, 'rb') as strm:
     src_atlas = yaml.load(strm)
@@ -26,6 +26,7 @@ file_cells = sorted((fn, [n for x in mp[1:] for n in x['names'] if n != '_']) fo
 
 
 def munged_name(file_name, cell_name):
+    """Cells in items.png get _item appended to their name."""
     if file_name == 'terrain.png':
         return cell_name
     affix = file_name[:-4]
