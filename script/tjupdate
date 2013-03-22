@@ -5,14 +5,5 @@
 
 cd $(dirname $0)/..
 
-ver=$(cat VERSION)
-dir=../texturejam/static/texturepacks
-
-maketexture --force -v --out=$dir/patches.$ver.zip patches.tprx
-
-cd $dir
-git add patches.$ver.zip
-git commit -m 'Update patches texture pack'
-git push
-
-
+cp -p ../texturepacker/minecraft/maps/* rx/maps
+scripts/mkpatchesr

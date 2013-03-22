@@ -147,7 +147,7 @@ mix:
             source: beta-17-patch.png
     pack: $base
 packs:
-    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.009.zip'}
+    patches: {href: 'http://static.texturejam.org.uk/texturepacks/patches.011.zip'}
 parameters:
     packs:
     -   name: base
